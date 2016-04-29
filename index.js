@@ -22,6 +22,7 @@ var api = new ParseServer({
     //serverURL: process.env.SERVER_URL || "http://parseserver.spayurztpa.us-east-1.elasticbeanstalk.com/parse"
     serverURL: process.env.SERVER_URL || "http://parseserverqa.zkr8u4mwnu.us-east-1.elasticbeanstalk.com/parse"
     //serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse'
+
 });
 
 /*
