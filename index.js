@@ -5,8 +5,7 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 //var path = require('path');
 
-//var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI || 'mongodb://root:dcoburei0409@ez-mdb-0.easyruta.4855.mongodbdns.com:27000,ez-mdb-1.easyruta.4855.mongodbdns.com:27000,ez-mdb-2.easyruta.4855.mongodbdns.com:27000/easyruta?replicaSet=easyruta&ssl=false';//PROD
-var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI || 'mongodb://root:dcoburei0409@ezqa-mdb-0.easyruta-qa.1088.mongodbdns.com:27000/easyruta?ssl=false';//QA
+var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI || 'mongodb://root:dcoburei0409@ezqa-mdb-0.easyruta-qa.1088.mongodbdns.com:27000/easyruta?ssl=false';
 
 if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
@@ -15,14 +14,9 @@ if (!databaseUri) {
 var api = new ParseServer({
     databaseURI: databaseUri,
     cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-    //appId: process.env.APP_ID || 'wJjWR5KTriUoPNnDH3baAQMkWvpAhuFhNU7PsKOP', //PROD
-    //masterKey: process.env.MASTER_KEY || 'T6191e7kPbR9ksx93YEaXS2Jgyc67M6IdcdT8JXE', //PROD
-    appId: process.env.APP_ID || '2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE', //QA
-    masterKey: process.env.MASTER_KEY || 'oqmfNH1EzA8KQM32DpWYlG2CXTJAcKs7ewVAgtUL', //QA
-    //serverURL: process.env.SERVER_URL || "http://parseserver.spayurztpa.us-east-1.elasticbeanstalk.com/parse"
+    appId: process.env.APP_ID || '2hLYHTAUJ9QXMWxQTXsOIZ2jXJLGtMauw2QN34fE',
+    masterKey: process.env.MASTER_KEY || 'oqmfNH1EzA8KQM32DpWYlG2CXTJAcKs7ewVAgtUL',
     serverURL: process.env.SERVER_URL || "http://parseserverqa.zkr8u4mwnu.us-east-1.elasticbeanstalk.com/parse"
-    //serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse'
-
 });
 
 /*
